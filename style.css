@@ -1,0 +1,173 @@
+body {
+    background-color: #111;
+    margin: 0;
+}
+
+p {
+    margin: 0;
+}
+
+video {
+    height: 200px !important;
+    transform: rotateY(180deg);
+}
+
+video, canvas {
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.wrapper-menu {
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.75);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 99;
+}
+
+.wrapper-menu .menu {
+    width: 100%;
+    max-width: 500px;
+    height: 300px;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(15px);
+    border: 1px solid #333;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.wrapper-menu .menu .start {
+    background-color: #222;
+    padding: 15px 20px;
+    border: 2px solid #fff;
+    display: inline-block;
+    font-size: 18px;
+    color: #fff;
+    font-family: Arial;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    cursor: pointer;
+}
+
+.wrapper {
+    height: 100vh;
+    background-image: url('./assets/tile.jpg');
+    background-size: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+}
+
+.wrapper .stuff-bar {
+    width: auto;
+    display: flex;
+    grid-gap: 5px;
+    position: fixed;
+    bottom: 35px;
+    z-index: 1;
+}
+
+.wrapper .stuff-bar .square {
+    width: 70px;;
+    height: 70px;
+    border: 5px solid #ccc;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.wrapper .stuff-bar .square img {
+    height: 80%;
+}
+
+.wrapper .stuff-bar .square p {
+    position: absolute;
+    right: 0px;
+    bottom: -5px;
+    font-size: 28px;
+    color: #fff;
+    filter: drop-shadow(0px 0px 50px rgba(0, 0, 0, 0.5));
+}
+
+.wrapper .heading {
+    height: 50px;
+}
+
+.wrapper .cursor {
+    width: 150px;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.wrapper .cursor.closed {
+    height: 50px;
+}
+
+.wrapper .cursor img {
+    width: 100%;
+    height: 100%;
+}
+
+.grid {
+    width: 100%;
+    max-width: 800px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-row-gap: 100px;
+    grid-column-gap: 150px;
+}
+
+.area {
+    width: 100%;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.area::after {
+    content: '';
+    width: 100%;
+    height: 15px;
+    background-image: url('../music-project/assets/border.png');
+    background-size: 120px 100%;
+    background-repeat: repeat-x;
+    background-position: center;
+    position: absolute;
+    bottom: -15px;
+}
+
+.mob {
+    width: 150px;
+    height: 150px;
+    overflow: hidden;
+}
+
+.mob img {
+    width: 100%;
+    height: 100%;
+    transform: translateY(100%);
+    transition: 500ms;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    overflow: hidden;
+}
+
+.mob.active img {
+    transform: translateY(0);
+}
