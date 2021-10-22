@@ -1,4 +1,6 @@
 (function(){
+
+    //fetch('https://localhost:5000/enzo')
     
     const modelParams = {
         flipHorizontal: true,
@@ -161,17 +163,17 @@
         'a#3': 233.08,
         'b3': 246.94
     }
+    let oscillator
     
     const gestion_audio = () => {
+
+        const BaseAudioContext = window.AudioContext || window.webkitAudioContext
+        const context = new BaseAudioContext()
+        oscillator = context.createOscillator()
         
         if(audio_started) return false
 
         audio_started = true
-
-        const BaseAudioContext = window.AudioContext || window.webkitAudioContext
-        const context = new BaseAudioContext()
-
-        const oscillator = context.createOscillator()
         oscillator.type = 'triangle'
         
         oscillator.frequency.value = notes['a#3']
@@ -196,9 +198,22 @@
 
     }
 
-    document.querySelector('.menu .start').addEventListener('click', function() {
-        gestion_audio()
-        document.querySelector('.wrapper-menu').style.display = 'none'
+    const stop_audio = () => {
+        oscillator.stop()
+    }
+
+    let AUDIO_STATE = false;
+
+    document.querySelector('.btn-sound').addEventListener('click', function() {
+        if(!AUDIO_STATE) {
+            gestion_audio()
+            document.querySelector('.btn-sound img').src = './assets/sound-on.svg'
+            AUDIO_STATE = true
+        } else {
+            stop_audio()
+            document.querySelector('.btn-sound img').src = './assets/sound-off.svg'
+            AUDIO_STATE = false
+        }
     })
 
 })();

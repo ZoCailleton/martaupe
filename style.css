@@ -69,6 +69,19 @@ video, canvas {
     overflow: hidden;
 }
 
+.wrapper .btn-sound {
+    width: 35px;
+    position: absolute;
+    right: 75px;
+    top: 75px;
+    z-index: 2;
+}
+
+.wrapper .btn-sound img {
+    width: 100%;
+    cursor: pointer;
+}
+
 .wrapper .stuff-bar {
     width: auto;
     display: flex;
@@ -144,7 +157,7 @@ video, canvas {
     content: '';
     width: 100%;
     height: 15px;
-    background-image: url('../music-project/assets/border.png');
+    background-image: url('./assets/border.png');
     background-size: 120px 100%;
     background-repeat: repeat-x;
     background-position: center;
