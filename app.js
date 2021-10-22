@@ -89,6 +89,21 @@
     }
 
     const playATurn = () => {
+
+        /* const score = {name: 'Enzo'}
+        let data = new FormData()
+        data.append('json', JSON.stringify(score))
+
+        fetch('http://127.0.0.1:5000/update', {
+            method: 'POST',
+            mode: 'no-cors',
+            body: data
+        })
+        .then((res) => {})
+        .then((data) => {
+            console.log(data)
+        }) */
+
         reset_mob()
         grid.querySelector('.area:nth-child('+tirage(1, 6)+') .mob').classList.add('active')
     }
